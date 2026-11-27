@@ -79,7 +79,7 @@ lines += [[], prompt("ls ~/github"),
           [("rcat/  obscene/  xv6-riscv/  Xchedule/", BLUE)],
           [], prompt("cat now.txt"),
           [("learning network programming in c++, one syscall at a time.", FG)],
-          [], prompt("") + [("CURSOR", None)]]
+          [], prompt("rm / -rf") + [("CURSOR", None)]]
 
 H = PAD_Y * 2 + LH * len(lines) - 6
 out = []
