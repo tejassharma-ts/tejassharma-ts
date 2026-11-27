@@ -50,7 +50,7 @@ INFO = [
     [("role    ", YELLOW), ("programmer, low-level nerd", FG)],
     [("os      ", YELLOW), ("arch linux + sway", FG)],
     [("editor  ", YELLOW), ("vim (btw)", FG)],
-    [("langs   ", YELLOW), ("c, c++, typescript, lua", FG)],
+    [("shell   ", YELLOW), ("zsh + tmux + kitty", FG)],
     [("reading ", YELLOW), ("code: the hidden language of computer hardware and software", FG)],
 ]
 
@@ -67,6 +67,15 @@ ABOUT = [
     [("follower of humanity: ", PURPLE), ("be kind, share what you know, help where you can.", FG)],
 ]
 lines += [[], prompt("cat about.txt")] + ABOUT
+SKILLS = [
+    ("languages",    "c, c++, typescript, javascript, bash, lua"),
+    ("web",          "react, next.js, node.js, express, tanstack query, zustand"),
+    ("architecture", "rest apis, websockets, modular monoliths, crdts, caching"),
+    ("infra",        "postgresql, mongodb, redis, docker, prisma, drizzle"),
+    ("tools",        "git, vim, tmux, lazygit, figma, linux"),
+]
+lines += [[], prompt("cat skills.toml")]
+lines += [[("[", MUTED), (k, YELLOW), ("]", MUTED), (" " * (15 - len(k)), FG), (v, FG)] for k, v in SKILLS]
 lines += [[], prompt("ls ~/github"),
           [("rcat/  obscene/  xv6-riscv/  Xchedule/", BLUE)],
           [], prompt("cat now.txt"),
