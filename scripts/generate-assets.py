@@ -65,7 +65,7 @@ INTERESTS = [
 lines += [[], prompt("cat interests.txt")]
 lines += [[("".join(f"{t:<24}" for t in row).rstrip(), AQUA)] for row in INTERESTS]
 lines += [[], prompt("ls ~/github"),
-          [("rcat/  obscene/  xv6-riscv/  nvim/  dotfiles/  Xchedule/", BLUE)],
+          [("rcat/  obscene/  xv6-riscv/  Xchedule/", BLUE)],
           [], prompt("cat now.txt"),
           [("writing a redis in c++, one syscall at a time.", FG)],
           [], prompt("") + [("CURSOR", None)]]
