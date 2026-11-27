@@ -62,9 +62,8 @@ ABOUT = [
     [("hey, i'm tejas ", FG), (":)", YELLOW), (" i write software, then take it apart to see how it works.", FG)],
     [("computer science nerd at heart: ", FG), ("books, algorithms, data structures, linux,", AQUA)],
     [("operating systems", AQUA), (", anything that shows what the machine is *actually* doing.", FG)],
-    [("usually found in a terminal, reading man pages for fun.", FG)],
     [],
-    [("follower of humanity: ", PURPLE), ("be kind, share what you know, help where you can.", FG)],
+    [("follower of humanity.", PURPLE)],
 ]
 lines += [[], prompt("cat about.txt")] + ABOUT
 SKILLS = [
