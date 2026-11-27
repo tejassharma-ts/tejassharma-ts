@@ -58,12 +58,15 @@ lines = [prompt("fastfetch"), []]
 for logo, info in zip(LOGO, INFO):
     lines.append([("  " + logo, BLUE), ("   ", FG)] + info)
 lines.append(["PALETTE"])
-INTERESTS = [
-    ["operating systems", "networking", "distributed systems"],
-    ["databases & storage", "compilers & parsers", "how computers work"],
+ABOUT = [
+    [("hey, i'm tejas ", FG), (":)", YELLOW), (" i write software, then take it apart to see how it works.", FG)],
+    [("computer science nerd at heart: ", FG), ("books, algorithms, data structures, linux,", AQUA)],
+    [("operating systems", AQUA), (", anything that shows what the machine is *actually* doing.", FG)],
+    [("usually found in a terminal, reading man pages for fun.", FG)],
+    [],
+    [("follower of humanity: ", PURPLE), ("be kind, share what you know, help where you can.", FG)],
 ]
-lines += [[], prompt("cat interests.txt")]
-lines += [[("".join(f"{t:<24}" for t in row).rstrip(), AQUA)] for row in INTERESTS]
+lines += [[], prompt("cat about.txt")] + ABOUT
 lines += [[], prompt("ls ~/github"),
           [("rcat/  obscene/  xv6-riscv/  Xchedule/", BLUE)],
           [], prompt("cat now.txt"),
