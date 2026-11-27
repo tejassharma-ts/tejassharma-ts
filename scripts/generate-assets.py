@@ -47,19 +47,25 @@ LOGO = [
 INFO = [
     [("tejas", GREEN), ("@", FG), ("arch", BLUE)],
     [("----------", MUTED)],
-    [("role    ", YELLOW), ("front-end dev, low-level nerd", FG)],
+    [("role    ", YELLOW), ("programmer, low-level nerd", FG)],
     [("os      ", YELLOW), ("arch linux + sway", FG)],
     [("editor  ", YELLOW), ("vim (btw)", FG)],
-    [("into    ", YELLOW), ("c, sockets, caches, crdts", FG)],
-    [("reading ", YELLOW), ("designing data-intensive apps", FG)],
+    [("langs   ", YELLOW), ("c, c++, typescript, lua", FG)],
+    [("reading ", YELLOW), ("code: the hidden language of computer hardware and software", FG)],
 ]
 
 lines = [prompt("fastfetch"), []]
 for logo, info in zip(LOGO, INFO):
     lines.append([("  " + logo, BLUE), ("   ", FG)] + info)
 lines.append(["PALETTE"])
-lines += [[], prompt("ls ~/code/self"),
-          [("redis/  lru/  socket/  bracket-checker/  togetherlab/", BLUE)],
+INTERESTS = [
+    ["operating systems", "networking", "distributed systems"],
+    ["databases & storage", "compilers & parsers", "how computers work"],
+]
+lines += [[], prompt("cat interests.txt")]
+lines += [[("".join(f"{t:<24}" for t in row).rstrip(), AQUA)] for row in INTERESTS]
+lines += [[], prompt("ls ~/github"),
+          [("rcat/  obscene/  xv6-riscv/  nvim/  dotfiles/  Xchedule/", BLUE)],
           [], prompt("cat now.txt"),
           [("writing a redis in c++, one syscall at a time.", FG)],
           [], prompt("") + [("CURSOR", None)]]
@@ -83,7 +89,7 @@ for i, segs in enumerate(lines):
     if tspans:
         out.append(f'<text x="{PAD_X}" y="{y}" xml:space="preserve">{"".join(tspans)}</text>')
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="tejas@arch: front-end dev, low-level nerd. Arch + Sway, Vim. Into C, sockets, caches and CRDTs. Currently writing a Redis in C++.">
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="tejas@arch: programmer, low-level nerd. Arch + Sway, Vim. Writes C, C++, TypeScript and Lua. Interested in operating systems, networking, distributed systems, databases, compilers and how computers work. Currently writing a Redis in C++.">
 <title>tejas@arch</title>
 <defs><style>@font-face{{font-family:'CM';src:url(data:font/woff2;base64,{FONT_B64}) format('woff2')}}
 text{{font-family:'CM','Comic Mono',monospace;font-size:{SIZE}px}}</style></defs>
