@@ -72,7 +72,7 @@ SKILLS = [
     ("web",          "react, next.js, node.js, express, tanstack query, zustand"),
     ("architecture", "rest apis, websockets, modular monoliths, crdts, caching"),
     ("infra",        "postgresql, mongodb, redis, docker, prisma, drizzle"),
-    ("tools",        "git, vim, tmux, lazygit, figma, linux"),
+    ("tools",        "git, vim, tmux, lazygit"),
 ]
 lines += [[], prompt("cat skills.toml")]
 lines += [[("[", MUTED), (k, YELLOW), ("]", MUTED), (" " * (15 - len(k)), FG), (v, FG)] for k, v in SKILLS]
