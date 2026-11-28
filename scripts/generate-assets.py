@@ -62,8 +62,6 @@ ABOUT = [
     [("hey, i'm tejas ", FG), (":)", YELLOW), (" i write software, then take it apart to see how it works.", FG)],
     [("computer science nerd at heart: ", FG), ("books, algorithms, data structures, linux,", AQUA)],
     [("operating systems", AQUA), (", anything that shows what the machine is *actually* doing.", FG)],
-    [],
-    [("the world would've been a better place if humans were never born.", PURPLE)],
 ]
 lines += [[], prompt("cat about.txt")] + ABOUT
 SKILLS = [
@@ -81,6 +79,8 @@ lines += [[], prompt("ls ~/github"),
           [("work: ", YELLOW), ("grinding with claude to impress my manager. ", FG), ("(and learning stuff, i swear)", MUTED)],
           [("home: ", YELLOW), ("thinking and writing code with my own brain and hands, like people used to.", FG)],
           [("      learning network programming in c++, one syscall at a time.", FG)],
+          [], prompt("cat todays-thought.txt"),
+          [("the world would've been a better place if humans were never born.", PURPLE)],
           [], prompt("rm / -rf") + [("CURSOR", None)]]
 
 H = PAD_Y * 2 + LH * len(lines) - 6
